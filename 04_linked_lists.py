@@ -67,7 +67,12 @@ class LinkedList:
               current = current.next
           return result
         """
-        return []  # replace this
+        res = []
+        curr = self.head
+        while curr is not None:
+            res.append(curr.value)
+            curr = curr.next
+        return res  # replace this
 
     def push_front(self, value) -> None:
         """TODO: add a new node holding `value` at the FRONT of the chain.
@@ -77,6 +82,9 @@ class LinkedList:
           2. Point it at the current front: new_node.next = self.head
           3. Make it the new front: self.head = new_node
         """
+        new_node = Node(value)
+        new_node.next = self.head
+        self.head = new_node
         pass
 
     def push_back(self, value) -> None:
@@ -97,12 +105,27 @@ class LinkedList:
                    current = current.next
           4. Attach the new node there: current.next = new_node
         """
+        new_node = Node(value)
+        if self.head is None:
+            self.head = new_node
+       	else:
+            curr = self.head
+            while curr.next is not None:
+                curr = curr.next
+            
+            curr.next = new_node
         pass
 
     def find(self, value) -> bool:
         """TODO: return True if any node's .value equals `value`, else False.
         Same walk as to_list(), but checking instead of collecting.
         """
+        curr = self.head
+        while curr is not None:
+            if curr.value == value:
+                return True
+            else:
+                curr = curr.next
         return False  # replace this
 
     def remove(self, value) -> bool:
@@ -137,8 +160,21 @@ class LinkedList:
               current = current.next
           return False
         """
-        return False  # replace this
-
+       	if self.head is None:
+        	return False
+        if self.head.value == value:
+            self.head = self.head.next
+            return True
+        prev = self.head
+        current = self.head.next
+        while current is not None:
+            if current.value == value:
+                prev.next = current.next
+                return True
+            prev = current
+            current = current.next
+        return False
+       
 
 # ============================================================
 # Self-check — do not edit below this line.
