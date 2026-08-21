@@ -42,10 +42,17 @@ each depending on the last:
 - ~~Recursion + Big-O intuition~~ (lesson 3 — done)
 - ~~Linked Lists~~ (lesson 4 — done)
 - Binary Trees / BST (traversal, search)
-- Hash Maps (how Python's own `dict` works under the hood)
 - Sorting algorithms (bubble → merge/quick, and *why* the faster ones are faster)
 - Binary search + searching in sorted structures
 - Graphs (BFS/DFS) — ties back to the Uber project's spatial-index idea
 
-Lessons get built one at a time as you finish the previous one, not all
-upfront — so this list is a map, not a promise of what exists yet.
+Hash Maps was originally planned here but moved to the
+[system-design-daily](../system-design-daily) repo (day 1) instead, alongside
+the system-design context for *why* hash tables matter (caches, sharding,
+indexes) — no point building it twice.
+
+This is the DSA/coding-round leg of a
+[15-day interview-prep sprint](../system-design-daily/README.md) that also
+covers low-level design and system design in `system-design-daily`. Lessons
+get built one at a time as you finish the previous one, not all upfront — so
+this list is a map, not a promise of what exists yet.
