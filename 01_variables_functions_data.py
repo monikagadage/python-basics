@@ -28,9 +28,11 @@ print(f"{city} has {num_drivers} drivers online.")
 
 
 def describe_trip(rider_city: str, eta_min: float) -> str:
-    """TODO: return a string like 'Your ride to San Francisco arrives in 4.5 min'"""
-    # Replace the next line with a working f-string.
-    return f"Your ride to {rider_city} arrives in {eta_min} min"
+    """TODO: return a string like 'Your ride to San Francisco arrives in 4.5 min'
+    Same idea as the EXAMPLE above: an f-string with rider_city and eta_min
+    dropped into the text.
+    """
+    raise NotImplementedError
 
 
 # ============================================================
@@ -52,8 +54,7 @@ def eta_minutes(distance_km: float, speed_kmh: float) -> float:
     Formula: (distance / speed) hours, converted to minutes (x 60).
     Round to 1 decimal place with round(x, 1).
     """
-    travel_dis_minutes = (distance_km/speed_kmh) * 60
-    return round(travel_dis_minutes, 1)  # replace this
+    raise NotImplementedError
 
 
 # ============================================================
@@ -73,9 +74,10 @@ print(fast_speeds)  # [35, 28, 41]
 def speeds_in_mph(speeds_kmh: list[float]) -> list[float]:
     """TODO: convert every speed in km/h to mph using a list comprehension.
     1 km/h = 0.621371 mph. Round each result to 1 decimal place.
+    Same shape as the fast_speeds EXAMPLE above, but transforming
+    (s * 0.621371) instead of filtering (s > 25).
     """
-    speeds_mph = [round(s* 0.621371,1) for s in speeds_kmh ]
-    return speeds_mph  # replace this
+    raise NotImplementedError
 
 
 # ============================================================
@@ -97,14 +99,14 @@ def average_speed(driver_speeds: dict[str, float]) -> float:
     """TODO: return the average of all values in the dict, rounded to 1 decimal.
     Hint: sum(driver_speeds.values()) / len(driver_speeds)
     """
-    return round(sum(driver_speeds.values()) / len(driver_speeds),1) # replace this
+    raise NotImplementedError
 
 
 def fastest_driver_id(driver_speeds: dict[str, float]) -> str:
     """TODO: return the KEY (driver id) whose value (speed) is highest.
     Hint: max(driver_speeds, key=driver_speeds.get)
     """
-    return max(driver_speeds, key=driver_speeds.get)  # replace this
+    raise NotImplementedError
 
 
 # ============================================================
@@ -123,13 +125,10 @@ print(f"lat={lat}, lon={lon}")
 def midpoint(point_a: tuple[float, float], point_b: tuple[float, float]) -> tuple[float, float]:
     """TODO: return the midpoint (average lat, average lon) of two (lat, lon) points,
     as a tuple. Round each value to 4 decimal places.
-    """
+    Hint: unpack each point first, same as the EXAMPLE above:
     lat_a, lon_a = point_a
-    lat_b, lon_b = point_b
-    avg_lat = (lat_a+lat_b)/2
-    avg_lon = (lon_a+lon_b)/2
-    
-    return (round(avg_lat,4), round(avg_lon,4))  # replace this
+    """
+    raise NotImplementedError
 
 
 # ============================================================
